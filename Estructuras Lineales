@@ -1,0 +1,68 @@
+package pila.b;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Evelin Lizet Cruz Martinez
+ */
+public class PilaB {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         /*LIFO -- LAST INPUT FIRST OUTPUT     */
+         Scanner sc = new Scanner(System.in);
+        //variables globales
+        int op = 0, lim = 0, letras=0;
+        char [] pila = 
+        {'A','B','C','D','E','E','G','H','I','J','K','L','M',
+            'N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        String cadena = "";
+        char [] Arraycadena;
+        char caracter;
+        int contador=0;
+        //menu
+        do {
+            System.out.println("BIENVENIDO, POR FAVOR ESCOGE UNA OPCION :)\n"
+                       + "1.- LLENAR \n"
+                       + "2.- MOSTRAR \n"
+                       + "3.- ELIMINAR \n"
+                       + "4.- SALIR \n");
+            //evaluamos opt para elegir un caso dentro del switch
+            switch (op = sc.nextInt()) {
+                case 1:
+                    if(lim<27){
+                        System.out.println("SE HAN LLENADO TODOS LOS ESPACIOS DISPONIBLES :)\n");
+                        lim=27;
+                    }else{
+                        System.out.println("LA PILA SE ENCUENTRA LLENA :)");
+                    }
+                    break;
+                case 2:
+                    //verificamos que por lo menos haya un dato en la pila que se pueda mostrar.
+                    if(lim>0){
+                        //bucle que muestra el contenido en la pila
+                        //realiza el ciclo desde el valor que tiene "top"
+                        for(int i = lim-1; i>=0; i--){
+                        System.out.println(pila[(int) (Math.random() * (26))]);
+                        }
+                    } else {
+                        System.out.println("LA PILA SE ENCUENTRA SIN ELEMENTOS PARA MOSTRAR :)");
+                    }
+                    break;
+                case 3:
+                    if(lim>0){
+                        //esto se realiza iniando el ciclo desde el valor que tiene tope, restando 1 unidad en cada iteracion
+                        //mostrarmos valor agregado y posicion donde se ubica, utilizando la variable top
+                        System.out.println("HAZ ELIMINADO UN DATO..." + pila[lim-1] + " DE LA POSICION: " + lim);
+                        lim--;//lim=lim-1;
+                    } else {
+                        System.out.println("LA PILA SE ENCUENTRA VACIA, NO PUEDES ELIMINAR UN ELEMENTO :)");
+                    }
+                    break;
+            }
+        } while (op != 4);
+        System.out.println("GRACIAS Y REGRESA PRONTO :)");
+    }
+}

@@ -1,0 +1,58 @@
+Author Evelin Lizet Cruz Martinez 
+import java.util.Scanner;
+public class Listaenlazada {
+   private String name;
+    private Nodo next; 
+  Scanner sc=new Scanner(System.in);
+static class Nodo{
+        String Nombre;
+        Nodo sig;
+}
+public void show(){
+    
+            System.out.println(name+" ");
+        while(next != null){
+            System.out.print(next.Nombre + " ");
+            next = next.sig;
+        }
+        }
+    public void add(){
+      Nodo Inicio=null;
+            if (Inicio==null){
+                Inicio=new Nodo();
+                System.out.println("integra dato");
+                Inicio.Nombre=sc.nextLine();
+                Inicio.sig=null;
+            }else{
+                Nodo temp;
+                temp=new Nodo();
+                System.out.println("intrega dato");
+                temp.Nombre=sc.nextLine();
+                temp.sig=Inicio;
+                Inicio=temp;
+            }
+        }
+
+    public static void main(String[] args) {
+        
+          Scanner sc=new Scanner(System.in);
+          int opt;
+     do{
+            System.out.println("\n1 add"
+                    +"\n2 show"
+                    +"\n3 exit");
+            switch(opt=sc.nextInt()){
+                case 1:
+                Listaenlazada v = new Listaenlazada();
+                    v.add();
+                    break;
+
+                case 2:
+                    Listaenlazada n = new Listaenlazada();
+                   n.show();
+                    break;
+               
+            }
+        }while(opt!=3);
+}
+}

@@ -1,0 +1,61 @@
+package Nodo;
+
+import java.util.Scanner;
+/**
+ *
+ * @author Evelin Lizet Cruz Martinez_3S12
+ */
+public class Nodo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Lista R=new Lista();
+        Scanner esc=new Scanner(System.in);
+        int opt=0;
+        do{
+            System.out.println("\ BIENVENIDO"
+            + "\n1 MOSTRAR"
+            + "\n2 AGREGAR"
+            + "\n3 ELIMINAR"
+            + "\n4 BUSCAR"
+            + "\n5 GENERAR"
+            + "\n6 SALIR");
+            
+            switch(opt=esc.nextInt()){
+                
+                case 1:
+                    R.MOSTRAR();
+                    break;
+                    
+                case 2:
+                    System.out.println("INGRESE EL DATO QUE DESEA AGREGAR");
+                    //esc.nextLine();
+                    R.AGREGAR(esc.nextLine());
+                    break;
+                    
+                case 3:
+                    R.ELIMINAR();
+                        //System.out.println("SE HA ELIMINADO EL NODO");
+                    break;
+                    
+                case 4:
+                    System.out.println("INGRESE EL DATO QUE DESEA BUSCAR");
+                    esc.nextLine();
+                    /*if(R.BUSCAR(esc.nextLine())){
+                        System.out.println("EL DATO SE ENCUENTRA EN LA POSICION: " + R.cont);
+                    } else {
+                        System.out.println("VALOR NO ENCONTRADO");
+                    }*/
+                    break;
+                    
+                case 5:
+                    R.imprimir(R.Palabra(1));
+                    break;
+            }
+            
+        }while(opt!=6);
+    }
+    
+}

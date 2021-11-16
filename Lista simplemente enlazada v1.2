@@ -1,0 +1,43 @@
+package Nodo;
+
+import java.util.Scanner;
+/**
+ *
+ * @author Evelin Lizet Cruz Martinez_3S12
+ */
+public class Nodo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Lista R=new Lista();
+        Scanner esc=new Scanner(System.in);
+        int opt=0;
+        do{
+            System.out.println("\n1 MOSTRAR"
+            + "\n2 AGREGAR"
+            + "\n3 ELIMINAR"
+            + "\n4 SALIR");
+            
+            switch(opt=esc.nextInt()){
+                
+                case 1:
+                    R.MOSTRAR();
+                    break;
+                    
+                case 2:
+                    System.out.println("Ingrese dato que se desea agregar");
+                    //esc.nextLine();
+                    R.AGREGAR(esc.nextLine());
+                    break;
+                    
+                case 3:
+                    R.ELIMINAR();
+                        //System.out.println("Se ha eliminado el nodo");
+                    break;
+                    
+        }while(opt!=4);
+    }
+    
+}
